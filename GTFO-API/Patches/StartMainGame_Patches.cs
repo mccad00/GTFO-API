@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using GameData;
+﻿using GameData;
 using Globals;
 using HarmonyLib;
 using UnityEngine.Analytics;
@@ -14,7 +11,7 @@ namespace GTFO.API.Patches
         [HarmonyPatch(nameof(StartMainGame.Start))]
         [HarmonyWrapSafe]
         [HarmonyPostfix]
-        public static void StartMainGame_Postfix()
+        public static void Start_Postfix()
         {
             Analytics.enabled = false;
             if (Global.RundownIdToLoad != 1)
